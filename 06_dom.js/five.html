@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <ul class="language">
+        <li>javascript</li>
+        <li>ruby</li>
+    </ul>
+
+</body>
+<script>
+    function addElement(lang){
+        const addel=document.createElement('li');
+        addel.innerText=lang;
+        // document.body.ul.appendChild(addel) this is wrong as there is no method like this we have to first select the ul and then append in it 
+        //this is not the best way as the browser has to traverse the whole li and it'll be problem if it has 1000 elements and so it'll take time. So better way is 
+        document.querySelector('.language').appendChild(addel)
+        
+        
+
+
+
+    }
+    function addElementOpti(lang){
+        const addel=document.createElement('li');
+        addel.appendChild(document.createTextNode(lang));
+        document.querySelector('.language').appendChild(addel);
+    }
+    // const txt = prompt("enter a language")
+    // addElementOpti(txt);
+
+    //EDIT
+    const secondElement = document.querySelector("li: nth-child(2)")
+    secondElement.innerText="a"
+
+
+</script>
+</html>

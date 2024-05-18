@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <div class="parent">
+        <!-- this is a comment  -->
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+<script>
+    const parent = document.querySelector('.parent');
+    // console.log(parent);
+    // console.log(parent.children); this gives an HTML collection
+    // console.log(parent.children[1].innerHTML);
+    //HTML collection is an array like datatype although we cannot apply foreach loop directly but for loop will work 
+    for (let i = 0; i < parent.children.length ; i++) {
+        // console.log(parent.children[i].innerText);
+        
+    }
+    parent.children[1].style.color="blue"
+    // console.log(parent.firstElementChild); //this gives first child element ofthe parent 
+    // console.log(parent.lastElementChild); // this gives last child element 
+
+   // till now we werre moving parent -> child. we can also move child-> parent
+   const dayOne=document.querySelector('.day')
+    // console.log(dayOne);
+    //console.log(dayOne.parentElement);
+    //console.log(dayOne.nextElementSibling);
+   console.log("nodes: ",parent.childNodes);
+   //+++++INTERESTING+++++ -> childNodes are a very interesting property as it tells how the browser expands the info. Every line break and every comment becomes a node behind the scene. Here we see 4 div elements inside the parent element but this property shows 11 childnoes. HOW? see after the parent one linebreak then 1 comment then 1 linebreak and like this total 11
+   
+
+</script>
+</body>
+</html>

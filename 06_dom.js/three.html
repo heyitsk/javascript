@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    
+</body>
+<script>
+    const divElement = document.createElement('div')
+    console.log(divElement);
+    divElement.className = "class";
+    divElement.id = "myId"
+    divElement.innerText = "hi this is my first div element";
+    divElement.setAttribute("title","generated title");
+    divElement.style.backgroundColor="orange";
+    divElement.style.padding="15px";
+    divElement.style.borderRadius="10px"
+    //the most efficient way to add text is not set attribute or inner text it is creating a text node and then appending it in the parent element 
+    const txt = document.createTextNode("hi this is my first div element");
+    document.divElement.appendChild(txt)
+    
+    //currenlty there is nothing on the web page bcz this div is in the memory we have to append it ->
+    document.body.appendChild(divElement)
+</script>
+</html>
