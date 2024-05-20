@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <p >
+        <h2 id="num">0</h2>
+    
+    </p>
+    <input type="button" value="start" id="start-button">
+    <input type="button" value="end" id="end-button">
+</body>
+<script>
+    let count = 0;
+    let intervalID;
+    const startButton = document.querySelector("#start-button")
+    const endButton = document.querySelector("#end-button")
+    const num = document.querySelector("#num")
+    startButton.addEventListener("click",function(e){
+        intervalID =setInterval(function(){
+            count++;
+            num.textContent=count;
+        },1000)
+        
+        
+    })
+    endButton.addEventListener("click",function(e){
+        clearInterval(intervalID)
+    })
+</script>
+</html>
+
+//but why does the intervalID defined in one scope gets used in another without any error? The reason might be that we defined the var at the global scope and then used it in one
