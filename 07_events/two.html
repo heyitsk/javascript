@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <h1>MRP:- 20,000</h1>
+    <button id="stop">i don't want discount</button>
+</body>
+<script>
+    const discount = document.body.querySelector("h1")
+    const change = setTimeout(function(){
+        discount.innerHTML = "18,000"
+        console.log("discount printed");
+
+},3000)
+//you can define a fucntion somewhere else and pass a refernce instead of writing the entire fucntion but you have to only give the reference by writing func name and not calling it by func()
+    const stopp = document.querySelector("#stop")
+    stopp.addEventListener("click",function(){
+        clearInterval(change);
+        console.log("stopped succesfully");
+    })
+     
+</script>
+</html>

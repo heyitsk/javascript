@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+    
+</body>
+<script>
+    let intervalID;
+    const start = document.body.querySelector("#start")
+    function bgcolor(){
+        const randomNum = Math.floor(Math.random()*16777215);
+        const randomHex = "#"+randomNum.toString(16)
+        //you have to learn these 2 steps 
+        
+        // console.log(randomNum,randomHex);   
+        document.body.style.backgroundColor = randomHex; 
+
+    }
+    start.addEventListener("click",function(){
+        if(!intervalID){
+            intervalID =  setInterval(bgcolor, 1000);
+        }
+       
+    })
+    const stop = document.body.querySelector("#stop")
+    stop.addEventListener("click",function(){
+        clearInterval(intervalID)
+        intervalID= null;
+
+    })
+    //the mistake we were doing is not declaring the intervalid variable globally. You have to declare the interval id globally and then can use it inside multiple functions 
+    //if you think about the corner cases we're overwriting the value of intervalid constantly and sometimes it gives error. So after you clear the interval set it's value to null and ONLY if the value of intervalid is null you can add a new value 
+</script>
+</html>
