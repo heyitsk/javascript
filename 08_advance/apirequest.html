@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <button class="button">Click on this</button>
+
+    
+</body>
+<script>
+    const reqUrl = "https://api.github.com/users/hiteshchoudhary"
+    const xmlr = new XMLHttpRequest();
+    let imageUrl, followers;
+    xmlr.onreadystatechange = function(){
+        // console.log(xmlr.readyState);
+        if (xmlr.readyState==4) {
+            const data = JSON.parse(this.responseText);
+            //this data is in string form so we have to convert it in JSON
+            // console.log(data);
+            followers = data.followers;
+            imageUrl = data. avatar_url
+        }
+    }
+    xmlr.open("GET",reqUrl,true)
+    xmlr.send()
+    const button = document.querySelector("button")
+    button.addEventListener("click",createCard)
+    function createCard(){
+        document.body.innerHTML = `<div class="card" style=" box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); ">
+  <img src=${imageUrl} alt="Avatar" style="width:300px">
+  <div class="container" style="padding: 2px 16px;">
+    <h4><b>followers->${followers}</b></h4>
+    
+  </div>
+</div>`
+
+    }
+</script>
+</html>
