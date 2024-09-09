@@ -7,9 +7,9 @@ function chaii(){
 // chaii();
 //instead of this we can do 
 //named iife
-(function chaiii(){
-    console.log("Db connected");
-})();
+(function chaiii(k){
+    console.log(`Db connected ${k}`);
+})("hi");
 // the first () is for the definition of the function and the ssecond () is for function execution 
 // ; after () is important to end the iife 
 
