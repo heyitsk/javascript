@@ -25,7 +25,7 @@ const emptyObject = {};
 if (Object.keys(emptyObject).length === 0){
     console.log("object is empty");
 }
-
+//object me length hamesha keys se check krte h na ki direct length lagake. Toh basically pehle keys access krlo Object.keys() se fir uski length nikal lo
 
 // false == 0, 0 == "", 0 =="" all return true value 
 
